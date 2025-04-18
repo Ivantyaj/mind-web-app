@@ -1,54 +1,57 @@
-# Mindfulness Bot
+# Mindfulness Meditation Web App
 
-Бот для mindfulness медитаций, созданный как компаньон для КПТ психолога.
+Веб-приложение для Telegram бота с медитациями. Интегрируется с Telegram Web App API для предоставления удобного интерфейса для медитаций.
 
-## Функциональность
+## Особенности
 
-- Бесплатные медитации (аудио, видео, YouTube)
-- 21-дневный курс для премиум пользователей
-- Система достижений
-- Отслеживание состояния пользователя
-- Монетизация через Telegram Stars
+- Интеграция с Telegram Web App
+- Адаптивный дизайн
+- Поддержка премиум-контента
+- Автоматическая синхронизация с ботом
 
 ## Установка
 
-1. Клонируйте репозиторий:
+1. Склонируйте репозиторий:
 ```bash
-git clone https://github.com/yourusername/mindfulness-bot.git
-cd mindfulness-bot
+git clone https://github.com/your-username/mindfulness-webapp.git
 ```
 
-2. Создайте виртуальное окружение и активируйте его:
+2. Перейдите в директорию проекта:
 ```bash
-python -m venv venv
-source venv/bin/activate  # для Linux/Mac
-venv\Scripts\activate     # для Windows
+cd mindfulness-webapp
 ```
 
-3. Установите зависимости:
+3. Откройте `index.html` в браузере для локального тестирования.
+
+## Развертывание
+
+1. Создайте новый репозиторий на GitHub
+2. Переименуйте его в `your-username.github.io`
+3. Загрузите файлы в репозиторий:
 ```bash
-pip install -r requirements.txt
+git add .
+git commit -m "Initial commit"
+git push origin main
 ```
 
-4. Создайте файл .env и добавьте токен бота:
+4. Перейдите в настройки репозитория -> Pages
+5. Выберите ветку main и папку root
+6. Нажмите Save
+
+Ваше приложение будет доступно по адресу: `https://your-username.github.io`
+
+## Настройка
+
+1. В файле `app.js` замените URL сервера на ваш:
+```javascript
+const response = await fetch('http://your-server:8000/check_premium', ...
 ```
-BOT_TOKEN=your_bot_token_here
+
+2. В боте замените URL веб-приложения на ваш:
+```python
+WebAppInfo(url="https://your-username.github.io")
 ```
 
-## Запуск
+## Лицензия
 
-```bash
-python bot.py
-```
-
-## Структура проекта
-
-- `bot.py` - основной файл бота
-- `models.py` - модели базы данных
-- `database.py` - работа с базой данных
-- `requirements.txt` - зависимости проекта
-- `.env` - конфиденциальные данные
-
-## База данных
-
-Проект использует SQLite для хранения данных. База данных создается автоматически при первом запуске. 
+MIT 
